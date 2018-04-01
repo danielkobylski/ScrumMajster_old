@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ScrumMajster</string>
+    <string name="main_text">Your Projects</string>
+    <string name="project_title_hint">Type project name here...</string>
+    <string name="const_start_date">Start Date:</string>
+    <string name="const_end_date">End Date:</string>
+    <string name="ok_button">OK</string>
+    <string name="backlog_text">Backlog</string>
+    <string name="sprint_text">Current Sprint</string>
 </resources>
