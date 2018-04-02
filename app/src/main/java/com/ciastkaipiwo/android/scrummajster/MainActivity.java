@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_ADD = 0;
@@ -21,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private ProjectsAdapter mProjectsAdapter;
     private ImageButton mAddButton;
-
 
     @Override
     public void onResume() {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode != Activity.RESULT_OK) {
-            return;
+                return;
         }
         if (requestCode == REQUEST_CODE_ADD) {
             if (data == null) {

@@ -7,4 +7,7 @@
     <string name="ok_button">OK</string>
     <string name="backlog_text">Backlog</string>
     <string name="sprint_text">Current Sprint</string>
+    <string name="no_active_sprint">There is no active sprint. Tap to create</string>
+    <string name="sprint_title_hint">Enter sprint name here...</string>
+    <string name="active_tasks">active tasks.</string>
 </resources>

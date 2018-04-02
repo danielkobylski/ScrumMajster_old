@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ProjectConfigActivity" />
-        <activity android:name=".ProjectActivity"></activity>
+        <activity android:name=".ProjectActivity" />
+        <activity android:name=".SprintConfigActivity"></activity>
     </application>
 
 </manifest>

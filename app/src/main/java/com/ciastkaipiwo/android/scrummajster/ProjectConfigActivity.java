@@ -40,14 +40,14 @@ public class ProjectConfigActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String[] startDate = mStartDate.getText().toString().split("\\.",0);
+                        String[] startDate = mStartDate.getText().toString().split("\\.",0);
                 String[] endDate = mEndDate.getText().toString().split("\\.",0);
                 int startDay = Integer.valueOf(startDate[2]);
                 int startMonth = Integer.valueOf(startDate[1]);
                 int startYear = Integer.valueOf(startDate[0]);
                 int endDay = Integer.valueOf(endDate[2]);
-                int endMonth = Integer.valueOf(endDate[1]);;
-                int endYear = Integer.valueOf(endDate[0]);;
+                int endMonth = Integer.valueOf(endDate[1]);
+                int endYear = Integer.valueOf(endDate[0]);
                 String title = mProjectTitle.getText().toString();
 
                 Project newProject = new Project(title, new GregorianCalendar(startYear,startMonth,startDay), new GregorianCalendar(endYear,endMonth,endDay));
@@ -108,6 +108,5 @@ public class ProjectConfigActivity extends AppCompatActivity {
     public static Project getNewProject(Intent result) {
         return (Project) result.getParcelableExtra(NEW_PROJECT);
     }
-
 
 }
