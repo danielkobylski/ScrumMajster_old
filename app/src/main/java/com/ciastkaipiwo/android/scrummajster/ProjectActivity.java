@@ -54,7 +54,7 @@ public class ProjectActivity extends AppCompatActivity {
                 }
 
                 else {
-                    mSprintDetails.setText("Na chuj tu klikasz");
+                    mSprintDetails.setText("Now I should show current tasks within this sprint");
                 }
             }
         });
