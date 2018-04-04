@@ -9,14 +9,17 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class ProjectActivity extends AppCompatActivity {
 
     private static final String PROJECT = "com.ciastkaipiwo.android.scrummajster.project";
     private static final int REQUEST_CODE_ADD_SPRINT = 1;
     
-    private TextView mSprintDetails;
+    private LinearLayout mSprintContainer;
     private Project mProject;
-    private LinearLayout mBacklogDetails;
+    private LinearLayout mBacklogContainer;
+    private TextView mSprintDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,17 +30,25 @@ public class ProjectActivity extends AppCompatActivity {
 
         mSprintDetails = (TextView) findViewById(R.id.sprint_details);
 
-        mSprintDetails.setOnClickListener(new View.OnClickListener() {
+        mSprintContainer = (LinearLayout) findViewById(R.id.sprint_container);
+
+        mSprintContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProjectActivity.this, SprintConfigActivity.class);
-                startActivityForResult(intent, REQUEST_CODE_ADD_SPRINT);
+                if (mProject.getSprints().size() == 0) {
+                    Intent intent = new Intent(ProjectActivity.this, SprintConfigActivity.class);
+                    startActivityForResult(intent, REQUEST_CODE_ADD_SPRINT);
+                }
+                else {
+                    mSprintDetails.setText("I should now show SprintActivity");
+                }
             }
         });
 
-        mBacklogDetails = (LinearLayout) findViewById(R.id.backlog_container);
 
-        mBacklogDetails.setOnClickListener(new View.OnClickListener(){
+        mBacklogContainer = (LinearLayout) findViewById(R.id.backlog_container);
+
+        mBacklogContainer.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProjectActivity.this, BacklogActivity.class);
@@ -47,19 +58,7 @@ public class ProjectActivity extends AppCompatActivity {
 
         updateUI();
 
-        mSprintDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mProject.getSprints().size() == 0) {
-                    Intent intent = new Intent(ProjectActivity.this, SprintConfigActivity.class);
-                    startActivityForResult(intent, REQUEST_CODE_ADD_SPRINT);
-                }
 
-                else {
-                    mSprintDetails.setText("I should now show SprintActivity");
-                }
-            }
-        });
 
     }
 
