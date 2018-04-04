@@ -10,4 +10,7 @@
     <string name="no_active_sprint">There is no active sprint. Tap to create</string>
     <string name="sprint_title_hint">Enter sprint name here...</string>
     <string name="active_tasks">active tasks.</string>
+    <string name="backlog_add_task">ADD TASK</string>
+    <string name="const_new_task">Adding task</string>
+    <string name="cancel_button">Cancel</string>
 </resources>

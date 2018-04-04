@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class ProjectActivity extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class ProjectActivity extends AppCompatActivity {
     
     private TextView mSprintDetails;
     private Project mProject;
-
+    private LinearLayout mBacklogDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,17 @@ public class ProjectActivity extends AppCompatActivity {
             }
         });
 
-        updateUI();
-        /*if (mProject.getSprints().size()  == 0) {
-            mSprintDetails.setText(R.string.no_active_sprint);
-        }
+        mBacklogDetails = (LinearLayout) findViewById(R.id.backlog_container);
 
-        else {
-            Sprint activeSprint = mProject.getSprints().get(mProject.getSprints().size());
-            int taskCount = activeSprint.mTasksDict.size();
-            mSprintDetails.setText(taskCount + " " + R.string.active_tasks);
-        }*/
+        mBacklogDetails.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProjectActivity.this, BacklogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        updateUI();
 
         mSprintDetails.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +56,7 @@ public class ProjectActivity extends AppCompatActivity {
                 }
 
                 else {
-                    mSprintDetails.setText("Na chuj tu klikasz");
+                    mSprintDetails.setText("I should now show SprintActivity");
                 }
             }
         });

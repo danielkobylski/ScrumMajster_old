@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".ProjectConfigActivity" />
         <activity android:name=".ProjectActivity" />
-        <activity android:name=".SprintConfigActivity"></activity>
+        <activity android:name=".SprintConfigActivity" />
+        <activity android:name=".BacklogActivity"></activity>
     </application>
 
 </manifest>
