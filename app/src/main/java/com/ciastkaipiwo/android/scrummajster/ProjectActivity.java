@@ -39,6 +39,7 @@ public class ProjectActivity extends AppCompatActivity {
                     Intent intent = new Intent(ProjectActivity.this, SprintConfigActivity.class);
                     startActivityForResult(intent, REQUEST_CODE_ADD_SPRINT);
                 }
+
                 else {
                     mSprintDetails.setText("I should now show SprintActivity");
                 }
